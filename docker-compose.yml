@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    container_name: troykadb
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=my_store
+      - POSTGRES_USER=cahocyjei
+      - POSTGRES_PASSWORD=1914
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadming:
+    container_name: pgAdmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@mail.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+
