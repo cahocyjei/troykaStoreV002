@@ -216,5 +216,6 @@ $RECYCLE.BIN/
 *.lnk
 
 postgres_data
+docker-compose.yml
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,windows,macos
